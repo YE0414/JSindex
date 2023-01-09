@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>coupang_main</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+  <style>
+    *{margin: 0;padding: 0;}
+    header{
+      position: relative;
+    }
+    header>.cp_bn{
+      display: block;
+      width: 100%;
+    }
+    header .cp_img{
+      display: block;
+      width: 1263px;
+      margin: 0 auto;
+    }
+    .fa-solid{
+      cursor: pointer;
+      display: block;
+      position: absolute;
+      right: 15px;top:5px;
+      width: 60px;
+      text-align: center;
+      font-size: 60px;
+    }
+    .hd{
+      background: #f00;
+      height: 300px;
+    }
+    main{
+      background-color: #f0f;
+    }
+  </style>
+  <!--제이쿼리라이브러리-->
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+  <script>
+    $(document).ready(function(){
+    let cls_btn = $('.fa-solid');
+
+    cls_btn.click(function(){
+      $('.cp_img').slideUp();
+      $('.fa-solid').slideUp();
+    });
+  });
+  </script>
+</head>
+<body>
+
+  <header>
+
+    <div class="cp_bn">
+      <img src="./images/coupang_02.jpg" class="cp_img">
+      <i class="fa-solid fa-xmark"></i>
+    </div>
+    <div class="hd">
+    </div>
+</header>
+<main>
+  <section>
+    <article>
+      <h2>none</h2>
+    </article>
+  </section>
+</main>
+</body>
+</html>
