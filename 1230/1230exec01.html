@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1230exec01</title>
+  <style>
+    #news *{
+      padding: 0px;margin: 0px;
+    }
+    #news{
+      margin: 0 auto;
+      width: 400px;
+    }
+h4{
+  text-indent: 5px;
+  text-align: left;
+  transform: translateY(10px);
+  font-weight: bold;
+  font-size: 24px;
+  display: block;
+  border-bottom: 1px solid #333;
+  padding: 10px 0px !important;
+}
+#y_open, #m_open, #p_open,#s_open{
+transform: translateY(-20px);
+padding: 5px 3px;
+cursor: pointer;
+}
+#dtl_m,#dtl_p,#dtl_s,#dtl_y{
+  display: none;
+  list-style: none;
+  width: 330px;
+  text-overflow: ellipsis;/*...나오게*/
+  white-space:nowrap;/*글자를 한줄로 나오게*/
+  overflow: hidden;/*영역을 벗어난 콘텐츠 숨기기*/
+}
+.ran{
+  display: inline-block;
+  font-size: 18px;
+  font-weight: bold;
+  color: rgb(79, 135, 255);
+  padding: 5px !important;
+}
+#dtl>li{
+  width: 100px;
+}
+a{
+  text-indent: 5px;
+  text-decoration: none;
+  width: 330px;
+  text-align: left;
+  color: #333;
+}
+.title{
+  width: 400px;
+display: flex;
+justify-content: flex-end;
+}
+  </style>
+  <!--style>
+    *{margin:0px;padding:0px;}
+    h2, p{padding: 10px;}
+    #item{
+      width: 360px;
+      border:3px solid #000;
+    }
+    #item > p{text-align: center;}
+    .detail{
+      background: #ccc;
+      height: 100px;
+      font-size: 12px;
+      padding: 5px;
+      display: none;
+    }
+  </-style-->
+</head>
+<body>
+  <article id="news">
+
+    <h4>많이 본 뉴스</h4>
+    <p class="title">
+    <span id="m_open">MBC</span>
+
+    <span id="p_open">포털</span>
+    <span id="s_open">SNS</span>
+    <span id="y_open">유튜브</span>
+  </p>
+    <ol id="dtl_m">
+      <li><a href="#" title=""><span class='ran'>1</span>오늘 새벽 또 무인기 소동 굉음에 놀라 '깜짝'</a></li>
+      <li><a href="#" title=""><span class='ran'>2</span>뉴스외전
+        [뉴스외전 경제 '쏙'] '1/4 토막' 테슬라의 몰락‥"고양이 밥도 못 맡긴다"</a></li>
+      <li><a href="#" title=""><span class='ran'>3</span>"차 두고 뛰쳐나와" 순식간에 번진 불길에 '필사의 탈출'</a></li>
+      <li><a href="#" title=""><span class='ran'>4</span>[와글와글] "네가 왜 거기서 나와"‥ 대형 쇼핑몰 5층에 '경찰서'?</a></li>
+      <li><a href="#" title=""><span class='ran'>5</span>'비밀 경찰서' 의심 중식당 "추악한 세력 폭로하겠다"</a></li>
+      <li><a href="#" title=""><span class='ran'>6</span>'비밀 경찰서' 지목 중식당 "오늘 폭로하겠다" 예고</a></li>
+      <li><a href="#" title=""><span class='ran'>7</span>"도대체 뭐한 거냐" 대통령 질책에 군 "억울하다" 볼멘소리도</a></li>
+      <li><a href="#" title=""><span class='ran'>8</span>[와글와글] "아무도 없다 훔치자!" 재해 틈탄 도둑들</a></li>
+      <li><a href="#" title=""><span class='ran'>9</span>"김정은이 남친인가?" 미국, 독일에서 인종차별 범죄 잇따라</a></li>
+      <li><a href="#" title=""><span class='ran'>10</span>[단독] 숨진 빌라왕 송 모 씨‥"일감 받아 심부름한 사람이었다"</a></li>
+    </ol>
+
+    <ol id="dtl_p">
+      <li><a href="#" title=""><span class='ran'>1</span>오늘 새벽 또 무인기 소동 굉음에 놀라 '깜짝'</a></li>
+      <li><a href="#" title=""><span class='ran'>2</span>뉴스외전
+        [뉴스외전 경제 '쏙'] '1/4 토막' 테슬라의 몰락‥"고양이 밥도 못 맡긴다"</a></li>
+      <li><a href="#" title=""><span class='ran'>3</span>"차 두고 뛰쳐나와" 순식간에 번진 불길에 '필사의 탈출'</a></li>
+      <li><a href="#" title=""><span class='ran'>4</span>[와글와글] "네가 왜 거기서 나와"‥ 대형 쇼핑몰 5층에 '경찰서'?</a></li>
+      <li><a href="#" title=""><span class='ran'>5</span>'비밀 경찰서' 의심 중식당 "추악한 세력 폭로하겠다"</a></li>
+      <li><a href="#" title=""><span class='ran'>6</span>'비밀 경찰서' 지목 중식당 "오늘 폭로하겠다" 예고</a></li>
+      <li><a href="#" title=""><span class='ran'>7</span>"도대체 뭐한 거냐" 대통령 질책에 군 "억울하다" 볼멘소리도</a></li>
+      <li><a href="#" title=""><span class='ran'>8</span>[와글와글] "아무도 없다 훔치자!" 재해 틈탄 도둑들</a></li>
+      <li><a href="#" title=""><span class='ran'>9</span>"김정은이 남친인가?" 미국, 독일에서 인종차별 범죄 잇따라</a></li>
+      <li><a href="#" title=""><span class='ran'>10</span>[단독] 숨진 빌라왕 송 모 씨‥"일감 받아 심부름한 사람이었다"</a></li>
+    </ol>
+
+    <ol id="dtl_s">
+      <li><a href="#" title=""><span class='ran'>1</span>오늘 새벽 또 무인기 소동 굉음에 놀라 '깜짝'</a></li>
+      <li><a href="#" title=""><span class='ran'>2</span>뉴스외전
+        [뉴스외전 경제 '쏙'] '1/4 토막' 테슬라의 몰락‥"고양이 밥도 못 맡긴다"</a></li>
+      <li><a href="#" title=""><span class='ran'>3</span>"차 두고 뛰쳐나와" 순식간에 번진 불길에 '필사의 탈출'</a></li>
+      <li><a href="#" title=""><span class='ran'>4</span>[와글와글] "네가 왜 거기서 나와"‥ 대형 쇼핑몰 5층에 '경찰서'?</a></li>
+      <li><a href="#" title=""><span class='ran'>5</span>'비밀 경찰서' 의심 중식당 "추악한 세력 폭로하겠다"</a></li>
+      <li><a href="#" title=""><span class='ran'>6</span>'비밀 경찰서' 지목 중식당 "오늘 폭로하겠다" 예고</a></li>
+      <li><a href="#" title=""><span class='ran'>7</span>"도대체 뭐한 거냐" 대통령 질책에 군 "억울하다" 볼멘소리도</a></li>
+      <li><a href="#" title=""><span class='ran'>8</span>[와글와글] "아무도 없다 훔치자!" 재해 틈탄 도둑들</a></li>
+      <li><a href="#" title=""><span class='ran'>9</span>"김정은이 남친인가?" 미국, 독일에서 인종차별 범죄 잇따라</a></li>
+      <li><a href="#" title=""><span class='ran'>10</span>[단독] 숨진 빌라왕 송 모 씨‥"일감 받아 심부름한 사람이었다"</a></li>
+    </ol>
+
+    <ol id="dtl_y">
+    <li><a href="#" title=""><span class='ran'>1</span>오늘 새벽 또 무인기 소동 굉음에 놀라 '깜짝'</a></li>
+    <li><a href="#" title=""><span class='ran'>2</span>뉴스외전
+      [뉴스외전 경제 '쏙'] '1/4 토막' 테슬라의 몰락‥"고양이 밥도 못 맡긴다"</a></li>
+    <li><a href="#" title=""><span class='ran'>3</span>"차 두고 뛰쳐나와" 순식간에 번진 불길에 '필사의 탈출'</a></li>
+    <li><a href="#" title=""><span class='ran'>4</span>[와글와글] "네가 왜 거기서 나와"‥ 대형 쇼핑몰 5층에 '경찰서'?</a></li>
+    <li><a href="#" title=""><span class='ran'>5</span>'비밀 경찰서' 의심 중식당 "추악한 세력 폭로하겠다"</a></li>
+    <li><a href="#" title=""><span class='ran'>6</span>'비밀 경찰서' 지목 중식당 "오늘 폭로하겠다" 예고</a></li>
+    <li><a href="#" title=""><span class='ran'>7</span>"도대체 뭐한 거냐" 대통령 질책에 군 "억울하다" 볼멘소리도</a></li>
+    <li><a href="#" title=""><span class='ran'>8</span>[와글와글] "아무도 없다 훔치자!" 재해 틈탄 도둑들</a></li>
+    <li><a href="#" title=""><span class='ran'>9</span>"김정은이 남친인가?" 미국, 독일에서 인종차별 범죄 잇따라</a></li>
+    <li><a href="#" title=""><span class='ran'>10</span>[단독] 숨진 빌라왕 송 모 씨‥"일감 받아 심부름한 사람이었다"</a></li>
+  </ol>
+  </article>
+  <!--h2>exec01_tab</!--h2>
+  <p>제목을 클릭시 해당 글내용이 아래 보이게 하기</p>
+
+  <div-- id="item">
+    <img src="./images/banner.jpg" alt="배너사진">
+    <p><input type="button" value="상세설명 보기" id="open"></p>
+    <div id="desc" class="detail">
+      상세설명, 뉴스기사목록이 들어가는 부분
+    </div>
+  </div-->
+  <script>
+    const btn01=document.getElementById('y_open');
+    btn01. addEventListener('click', function(){
+      document.getElementById('y_open').style.color='rgb(79, 135, 255)'
+      document.getElementById('dtl_y').style.display='block'
+    });
+    const btn02=document.getElementById('m_open');
+    btn02. addEventListener('click', function(){
+      document.getElementById('m_open').style.color='rgb(79, 135, 255)'
+      document.getElementById('dtl_m').style.display='block'
+    });
+    const btn03=document.getElementById('p_open');
+    btn03. addEventListener('click', function(){
+      document.getElementById('p_open').style.color='rgb(79, 135, 255)'
+      document.getElementById('dtl_p').style.display='block'
+    });
+    const btn04=document.getElementById('s_open');
+    btn04. addEventListener('click', function(){
+      document.getElementById('s_open').style.color='rgb(79, 135, 255)'
+      document.getElementById('dtl_s').style.display='block'
+    });
+  </script>
+
+  <!--script>
+    const btn01=document.getElementById('open');
+    btn01.addEventListener('click',function(){
+      document.getElementById('desc').style.display='block'
+    });
+  </!--script-->
+</body>
+</html>

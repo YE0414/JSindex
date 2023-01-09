@@ -1,0 +1,20 @@
+카테고리 메뉴 하나에
+200*45
+메인
+200*50
+로고
+180*45
+
+http://na9804.dothome.co.kr/1216/index.html
+
+11. 인접(동위)선택자 p.351 동일한 관계 = 형제
+가로정렬: text-align(left/right/center/justify)
+세로정렬:vertical-align(테이블 셀에 적용)
+
+자바스크립트
+객체기반언어
+정적인 문서인 HTMl을 인터렉티브한 동적인 문서로 만든다.
+html 문서내에 요소들을 수정, 추가, 제거 등의 조작. 팝업창, GNB, 탭메뉴 등.
+
+ 순서
+html>css>JS

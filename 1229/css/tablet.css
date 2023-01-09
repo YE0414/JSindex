@@ -1,0 +1,200 @@
+@charset "utf-8";
+
+@media screen and (min-width:768px) and (max-width:1024px) {
+  body{
+  }
+  /*토글버튼*/
+  label.total_btn{
+    display: block;
+      font-size: 2rem;
+      color: #fff;
+      position: absolute;
+      right: 10px;bottom: 10px;
+      padding:5px;
+  }
+  img{width:100%}
+  header{
+    height:170px;
+  }
+  .h_top{width: 100%;}
+  .h_top > h1{
+    position:absolute;
+    left:20px;top:30px;
+    width:190px;
+  }
+  .h_top > h1 img{width:100%;}
+  header fieldset {
+    position:absolute;
+    right:10px;top:60px;
+  }
+  .h_top > .lnb{
+    position:absolute;
+    right:0px;top:20px;
+  }
+  .lnb > ul{
+    width:300px;
+    display:flex;
+    justify-content:space-around;
+  }
+  .lnb > ul a{
+    font-size:13px;
+    color:#fff;
+  }
+  .h_bottom .gnb{
+    position: absolute;
+    left: 0px; bottom: 5px;
+    width: 90%;}
+  .h_bottom .gnb > ul{
+    display:flex;
+    justify-content: flex-end;
+  }
+  .h_bottom .gnb > ul > li{
+    position: relative;
+    line-height:190%;
+    text-align:center;
+    padding:0px 3.3%;
+  }
+  .h_bottom .gnb > ul > li > a{
+    font-size:16px;
+    color:#fff;
+    font-weight: 400;
+  }
+  .h_bottom .gnb > ul > li > a::after{
+    width:1px;height:14px;
+    background:#fff;
+    content:"";
+    display:block;
+    position:relative;top:-20px;left:82px;
+  }  .h_bottom .gnb > ul > li:first-child> a::after{left:66px;}
+  .h_bottom .gnb > ul > li:nth-child(2) > a::after{left:80px;}
+.h_bottom .gnb > ul > li:nth-child(3) > a::after{left:55px;}
+.h_bottom .gnb > ul > li:nth-child(4) > a::after{left:50px;}
+.h_bottom .gnb > ul > li:nth-child(5) > a::after{left:67px;}
+.h_bottom .gnb > ul > li:nth-child(6) > a::after{left:100px;}
+.h_bottom .gnb > ul > li:last-child > a::after{display:none;}
+  /*푸터서식*/
+  .free_ex article,footer,address,.f_info, .f_nav{width: 100%;}
+/*서브메뉴서식*/
+.sub{
+  background-color: rgba(255, 255, 255, 0.9);
+  left: 0px;top:43px;
+  position: absolute;
+  height:250px;
+  padding: 15px 0px;
+  width: 100%;
+  display: none;
+  z-index: 1001;
+}
+.sub>li{
+  line-height: 260%;/*16px2=32px*/
+  text-align: center;
+}
+.sub>li>a{
+  font-size: 0.8rem;
+}
+.gnb>ul>li:first-child .sub{
+  padding-left:300px;left:-300px
+}
+.gnb>ul>li:nth-child(6) .sub{
+  padding-right: 190px;right:150px;
+}
+#toggle:checked + header>.h_bottom .sub{
+  display: block;
+}
+@media screen and (min-width:1000px) and (max-width:1024px){
+  .gnb>ul>li:nth-child(6) .sub{
+    padding-right: 230px;right:0px;
+  }
+  .free_ex article>img{
+    padding:80px 0px 0px 9% !important;
+  }
+  .product>li{width: 43%!important;}
+  .product>li img{width:270px!important;}
+  .s_img{
+    padding: 120px 12% 0px 0px!important; 
+  }
+  .story_left{padding-left: 12% !important;}
+}
+
+/*메인서식*/
+.login{
+  width: 100%;
+  margin: 100px auto;
+  margin-bottom: 200px;
+  text-align: center;
+}
+.login legend{
+  font-size: 18px;
+}
+input[id *=name]{
+  text-align: center;
+  background-color: rgb(232, 232, 232);
+}
+input[value=LOGIN]{
+  background-color: red;color: #fff;
+}
+input[id *=naver]{
+  background-color: rgb(58, 205, 50); color: #fff;
+}
+input[id *=kakao]{
+  background-color: yellow;
+}
+.login p{
+  margin: 20px 0px;
+  display: block;
+}
+.login p input{
+  border:none;
+  box-sizing: border-box;
+  width: 300px;height: 30px;
+  box-shadow: 0px 2px 3px rgb(163, 163, 163);
+}
+
+.join{
+  width: 300px;
+  height: 10px;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  display: block;
+  position: relative;
+}
+.join>span:first-child{position: absolute;left: 0px;}
+.join>span:nth-child(2){position: absolute;right: 0px;}
+/*푸터서식*/
+footer{background-color: #333;}
+.f_info,.f_nav, address{width: 100%;}
+.f_lnb{width: 32%;}
+.f_lnb li{margin: 0px 1%;}
+.f_nav dl{width: 58%;
+font-size:0.875rem;}
+.f_nav dl dd>span{
+  padding-left: 10px;
+}
+/*푸터영역정보서식*/
+.f_info{
+  width: 100%;
+}
+footer dl{width: 80%;}
+dt{display: none;}
+.f_info dd{
+  font-size: 1.125rem;
+  line-height: 230%;
+  color:rgb(194, 194, 194);
+}
+.f_info .number+p{font-size: 1rem;}
+.number{
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #fff;
+}
+.sns a{color:#fff;  padding: 0 15px;}
+.sns a span{display: none;}
+address{
+  padding: 3%;
+}
+address .a_info{width: 50%;}
+address .a_pay{width: 30%;}
+.sns, .siteurl{position: absolute;
+right: 5%;}
+.sns{top:60px}
+}

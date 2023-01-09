@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>자바스크립트 문서객체모델_속성값을 활용한 상품미리보기 콘텐츠</title>
+  <style>
+    *{
+      padding: 0px; margin: 0px;
+    }
+    a{
+      text-decoration: none;
+      color: #333;
+    }
+    section{
+      margin: 0 auto;
+      
+    }
+    article{
+      padding: 0 20px;
+      height: 558px;
+      float: left;
+    }
+    .photo{
+      width: 470px;
+    }
+    ul, li{list-style: none;}
+    ul{
+      display: flex;
+      justify-content: space-around;
+    }
+    ul>li>img{
+      width: 80px;
+    }
+    span:first-of-type, span:nth-of-type(1){
+      color: red;
+    }
+    h3>span{
+      display: block;
+      padding-bottom: 30px;
+    }
+    h3>p{
+      border-top: 2px solid rgb(200, 200, 200);
+      text-align: left;
+      width: 700px;
+      padding-top: 20px;
+      padding-bottom: 10px;
+      font-size: 24px;
+    }
+    article>p:first-of-type{
+      font-size: 48px;
+      border-bottom: 2px solid rgb(200, 200, 200);
+      padding-bottom: 30px;
+    }
+    article>p:first-of-type>a{
+      font-size: 16px;
+      color: #333;
+      border: rgb(200, 200, 200) 2px solid;
+      padding: 5px;
+      border-radius: 3px;
+      display: inline-block;
+      transform: translate(10px,-5px);
+    }
+    article>p:last-of-type,article>p:nth-of-type(2){
+      background-color: rgb(232, 232, 232);
+      padding: 5px;
+    }
+    .sml{
+      font-size: 24px;
+    }
+    article>p:last-child{
+      margin-top: 70px;
+      display: flex;
+      justify-content:space-between;
+    }
+    p>a{
+      color: #333;
+      padding: 10px 10px;
+    }
+    #Thumbnail>li>img{
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+<body>
+  <h2>자바스크립트 문서객체모델_속성값을 활용한 상품미리보기 콘텐츠</h2>                                                                      
+<p>이미지 5장을 사용하여 썸네일 이미지를 클릭시 큰사진이 보이게 하기</p>
+
+<section class="product">
+  <article class="photo">
+    <img src="./images2/photo01.jpg" alt="미리보기" id="big_img" onclick="displaySrc()">
+    <!--썸네일 클릭시 해당 속성 src값을 변수에 담아서 출력해본다.-->
+    <ul id="Thumbnail">
+      <li><img src="./images2/photo01.jpg" alt="썸네일" class="small"></li>
+      <li><img src="./images2/photo02.jpg" alt="썸네일" class="small"></li>
+      <li><img src="./images2/photo03.jpg" alt="썸네일" class="small"></li>
+      <li><img src="./images2/photo04.jpg" alt="썸네일" class="small"></li>
+      <li><img src="./images2/photo05.jpg" alt="썸네일" class="small"></li>
+    </ul>
+  </article>
+  <article>
+    <h3><span>오늘마감</span>
+    <p>[최대 40% 쿠폰] 머렐 헤비다운 외 스포츠 특가</p>
+    </h3>
+    <p><span>10<span class="sml">%</span></span>151,200<span class="sml">원~</span><a href="#" title="혜택보기">혜택보기</a></p>
+
+    <p><a href="#" title="적립금">구매 전 적립금 5,000원 받기</a><a href="#" title="무이자">카드 무이자 혜택보기(최대 6개월)</a></p>
+  </article>
+</section>
+  
+<script>
+    /*let p = document.getElementById('big_img');
+    let t = document.querySelectorAll('#Thumbnail > li > img');
+    // console.log(img_src);
+
+    for (let i=0;i<t.length;i++)
+    t[i].addEventListener('click',function(){
+      p.setAttribute('src',this.getAttribute('src'));
+    });*/
+    let b_img = document.querySelector("#big_img");
+    let s_img = document.querySelectorAll('.small');
+
+    for(let i=0;i<s_img.length;i++){
+      console.log(s_img[1])
+      s_img[i].addEventListener('click',changePic);
+    }
+    function changePic(){
+      let newPic = this.src;
+      console.log(newPic);
+
+      b_img.setAttribute('src',newPic);
+      
+      for(let j=0;j<s_img.length;j++){
+        s_img[j].style.border='none';
+        this.style.border='1px solid #f00';
+      }
+    }
+</script>
+</body>
+</html>

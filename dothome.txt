@@ -1,0 +1,15 @@
+내 서버 환경
+OS 리눅스
+웹서버 Apache 2.4
+PHP 버전 PHP 7.4
+DB MYSQL 8.0
+도메인 (홈페이지 주소)
+MYSQL 주소
+http://na9804.dothome.co.kr/myadmin
+----------------------
+OS 윈도우
+웹서버 IIS
+사용언어 ASP
+DB MS-SQL
+-----------------------
+공통(JAVA)

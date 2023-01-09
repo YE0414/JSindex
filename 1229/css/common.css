@@ -1,0 +1,155 @@
+@charset "utf-8";
+
+/*체크박스, 전체메뉴, 장바구니 아이콘 숨기기*/
+#toggle, label[for=toggle],.cart_btn{
+  display: none;
+}
+header{
+  background:#4B4B4B;
+  position:relative;
+}
+header fieldset legend, header fieldset span{display:none;}
+header fieldset {
+  position:absolute;
+  right:-10px;top:60px;
+}
+#search{
+  width:230px;height:30px;
+  border-radius:26px;
+  text-align:center;
+  border:none;
+  /* transition:0.3s; */
+}
+/* #search:focus{width:230px;} */
+label.fa-search{
+  font-size:22px;
+  transform:translate(-36px, 4px);
+}
+
+/*메인공통서식*/
+.login{
+  width: 1200px;
+  margin: 100px auto;
+  margin-bottom: 200px;
+  text-align: center;
+}
+.login legend{
+  font-size: 18px;
+}
+label[for *=name]{display: none;}
+input[id *=name]{
+  text-align: center;
+  background-color: rgb(232, 232, 232);
+}
+input[value=LOGIN]{
+  background-color: red;color: #fff;
+}
+input[id *=naver]{
+  background-color: rgb(58, 205, 50); color: #fff;
+}
+input[id *=kakao]{
+  background-color: yellow;
+}
+.login p{
+  margin: 20px 0px;
+  display: block;
+}
+.login p input{
+  border:none;
+  box-sizing: border-box;
+  width: 300px;height: 30px;
+  box-shadow: 0px 2px 3px rgb(163, 163, 163);
+}
+
+.join{
+  width: 300px;
+  height: 10px;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  display: block;
+  position: relative;
+}
+.join>span:first-child{position: absolute;left: 0px;}
+.join>span:nth-child(2){position: absolute;right: 0px;}
+/*푸터영역*/
+footer{
+  background-color: #333;
+  height: 360px;
+}
+.f_top{
+  height: 60px;
+  background: #989898;
+}
+.f_nav{
+  width: 1200px;
+  margin: 0 auto;
+  justify-content: space-evenly;
+  display: flex;
+}
+.f_lnb,footer dl{display: flex;
+  justify-content: space-between;}
+.f_lnb li{
+  margin: 0 15px;
+}
+.f_lnb li a{
+  font-weight: bold;
+  font-size: 14px;
+  color: #333;
+  line-height: 60px;
+
+}
+.f_nav dl{
+  width: 600px;
+  font-size: 14px;
+  line-height: 60px;
+  color: #fff;
+}
+.f_nav a{
+  color:#fff;
+}
+.f_nav dl>dt{}
+.f_nav dl>dd{
+
+}
+.f_nav dl dd>span{padding-left: 100px;}
+
+/*푸터영역정보서식*/
+.f_info{
+  width: 1200px;
+  margin: 0 auto;
+  padding: 15px 0px;;
+  position: relative;
+}
+dt{display: none;}
+dl{
+  display: flex;
+  justify-content: space-between
+}
+.f_info dd{
+  font-size: 18px;
+  line-height: 46px;
+  color:rgb(194, 194, 194);
+}
+.f_info dd>h3{
+  font-weight: 200;
+}
+.number{
+  font-size: 34px;
+  font-weight: 400;
+  color: #fff;
+}
+.sns a{color:#fff;  padding: 0 15px;}
+.sns a span{display: none;}
+address{
+  border-top: 1px solid #ccc;
+  width: 1200px;
+  margin: 0 auto;
+  color: rgb(194, 194, 194);
+  padding: 30px 30px 10px 30px;
+  box-sizing: border-box;
+  line-height: 30px;
+  display: flex;
+  justify-content: space-around;
+}
+address .a_info{width: 50%;}
+address .a_pay{width: 30%;}

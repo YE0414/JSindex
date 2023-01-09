@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1226exec01</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+  <style>
+    #banner{
+      position: relative;
+      margin: 0 auto;
+      width: 1200px;
+    }
+    div{
+      margin: 0 auto;
+      text-align: center;
+    }
+  i{padding: 20px 25px;
+      box-shadow: 0px 0px 3px #333; cursor: pointer;
+    border-radius: 50%;
+    background-color: #fff;
+  position: absolute;}
+  .fa-angle-left{
+    left: 0px;bottom: 350px;z-index: 9999;
+  }
+  .fa-angle-right{
+    right: 0px;bottom: 350px;z-index: 9999;
+  }
+
+  </style>
+</head>
+<body>
+  <article id="banner">
+  <div>
+  <span id="number">&nbsp;</span>
+  <i class="fas fa-angle-left" onclick="minus()"></i>
+  <i class="fas fa-angle-right" onclick="plus()"></i>
+    <img src="./images/banner01.jpg" alt="배너" id="banner">
+  </div>
+</article>
+  <script>
+    let n=1;
+    document.getElementById("number").innerHTML=n+'/4';
+
+    function plus(){
+      if(n==4){
+        n=1;}else{
+          n++;
+        }
+    document.getElementById('page').innerHTML=n+'/4';
+    document.getElementById('banner').src="./images/banner0"+n+".jpg";
+      }
+
+    function minus(){
+      if(n==4){
+        n=1;}
+      else{
+        n--;
+      }
+      document.getElementById('page').innerHTML=n+'/4';
+      document.getElementById('banner').src="./images/banner0"+n+".jpg";
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>0104_exec_03</title>
+  <style>
+    *{padding: 0px;margin: 0px;}
+    #img_box{
+      width: 1441px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    h3{display: none;}
+    #img_box>.mv_img{
+      display: flex;
+      justify-content: center;
+      padding-bottom: 20px;
+    }
+    .mv_img>li{width: 74px;
+      height: 74px;
+      overflow: hidden;
+      margin: 1px;
+    }
+    .s_img{height: 100%;
+}
+    #big_img{
+    }
+
+    #img_box>p:first-of-type{
+      font-size: 24px;
+      text-align: left;
+      transform: translateX(0px);
+      padding-bottom: 20px;
+      border-bottom: 1px solid rgb(188, 188, 188);
+    }
+    #img_box>p:first-of-type>span{
+      font-size: 30px;
+      font-weight: bold;
+    }
+    #img_box>p:last-of-type{
+      text-align: left;
+      padding: 20px 20px;
+      transform: translateX(150px);
+    }
+  </style>
+</head>
+<body>
+  <article id="img_box">
+    <h3>.</h3>
+    <p><span>포토</span> 13/29건</p>
+    <p>스틸컷 (16) | 포스터(13)</p>
+    <ul class="mv_img">
+      <li><img src="./images/movie_image.jpg" alt="" class="s_img"></li>
+      <li><img src="./images/movie_image (1).jpg" alt="" class="s_img"></li>
+      <li><img src="./images/movie_image (2).jpg" alt="" class="s_img"></li>
+      <li><img src="./images/movie_image (3).jpg" alt="" class="s_img"></li>
+      <li><img src="./images/movie_image (4).jpg" alt="" class="s_img"></li>
+      <li><img src="./images/movie_image (5).jpg" alt="" class="s_img"></li>
+      <li><img src="./images/movie_image (6).jpg" alt="" class="s_img"></li>
+      <li><img src="./images/movie_image (7).jpg" alt="" class="s_img"></li>
+      <li><img src="./images/movie_image (8).jpg" alt="" class="s_img"></li>
+      <li><img src="./images/movie_image (9).jpg" alt="" class="s_img"></li>
+      <li><img src="./images/movie_image (10).jpg" alt="" class="s_img"></li>
+      <li><img src="./images/movie_image (11).jpg" alt="" class="s_img"></li>
+      <li><img src="./images/movie_image (13).jpg" alt="" class="s_img"></li>
+      <li><img src="./images/movie_image (14).jpg" alt="" class="s_img"></li>
+      <li><img src="./images/movie_image (15).jpg" alt="" class="s_img"></li>
+    </ul>
+    <div id="big_img">
+      <img src="./images/movie_image.jpg" alt="" id="photo">
+    </div>
+  </article>
+  
+  <script>
+
+    let s_img = document.querySelectorAll('.s_img');
+
+    for(let i=0;i<=s_img.length;i++){
+      console.log(s_img[i]);
+      s_img[i].addEventListener('click', imgChange);
+    }
+
+    function imgChange(){
+      let url = this.src;
+      console.log(url);
+      
+      let big_url='./images/movie_image.jpg';
+
+      url = url.replace(big_url, url);
+      
+      document.getElementById('photo').src=url; 
+
+      for(let j=0;j<s_img.length;j++){
+        s_img[j].style.border='none';
+        this.style.border='2px solid #f00';
+      }
+    }
+  </script>
+</body>
+</html>

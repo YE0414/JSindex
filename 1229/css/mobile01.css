@@ -1,0 +1,244 @@
+@charset "utf-8";
+
+@media screen and (max-width:767px) {
+
+  label[for=toggle], .cart_btn{display:block;}
+
+  header{
+    height:60px;
+    position:relative;
+    background: #4b4b4b;
+  }
+  .h_top > h1{
+    text-align: center;
+    width:130px;
+    margin:0px auto;
+  }
+
+  .h_top > h1 img{
+    width:100%;
+    padding-top:4px;
+  }
+
+  /* 전체메뉴, 카트버튼위치 */
+.total_btn, .cart_btn{
+  position: absolute;
+  top:20px;
+}
+.total_btn{left:10px;}
+.cart_btn{right:10px;}
+
+.fa-bars, .fa-shopping-cart{
+  font-size: 24px;
+  color:#fff;
+}
+
+/* 잠시숨기기 */
+header fieldset, .lnb, .h_bottom{
+  display: none;
+}
+
+/* 메인콘텐츠 서식 */
+main > .slide img{
+  /* width:100%;
+  transform:scale(1.5); */
+  height:460px;
+  /* transform: translateX(-50px;); */
+  object-fit:cover; /*이미지 크기 비율을 높이기준으로 맞춤(가로가 잘림)*/
+}
+
+/* 사료무료체험 */
+.free_ex{
+  padding:10.4% 0px;
+  text-align: center;
+  height:730px;
+  box-sizing: border-box;
+}
+
+.free_ex article > img{
+  width:70%;
+}
+
+.free_ex_right{
+  color:#fff;}
+
+  @media screen and (max-width:500px) {
+    .free_ex article > img{
+      transform:translateY(70%);
+    }
+    .free_ex_right{
+      transform:translateY(-360px);
+    }
+  }
+
+  @media screen and (min-width:501px) and (max-width:767) {
+    .free_ex article > img{
+      transform:translateY(60%);
+    }
+    .free_ex_right{
+      transform:translateY(70%);
+    }
+  }
+
+  .free_ex_right > h2{
+    font-size: 2rem;
+    font-weight: 200;
+    padding-bottom: 16px;
+  }
+  .free_ex_right > h2 > img{
+    padding-bottom:10px;
+    width:60px;
+  }
+  .free_ex_right p{
+    font-size:1.125rem;
+    line-height:24px;
+    padding:10px 0px 30px 0px;
+  }
+  .button{
+    font-size:16px;
+    background: #fff;
+    padding:6px 30px;
+    border:1px solid #ccc;
+    transition: 0.5s;
+  }
+
+  /* 상품목록 */
+  .shop{padding:50px 0px 50px 0px;}
+  .shop > h2{
+    text-align: center; font-size: 2rem;
+    padding:20px 0px 60px 0px;
+    font-weight: bold;  
+  }
+
+  .shop > h2 > img{
+    width:40px;
+    padding-right:10px;
+    transform: translateY(8px);
+  }
+  .p_center{
+    text-align:center;
+    margin-bottom:80px;
+  }
+.product{
+  width:160%;
+  display: flex;
+  justify-content: space-around;
+}
+.product > li{
+  width:80%;
+  text-align: center;
+}
+.product > li img{
+  width:200px;
+  float:left;
+  padding:0px 0px;
+}
+
+.info{
+  width:160px;
+  float:right;
+  padding-top:30px;
+  font-size:1rem;
+}
+.info > h3{
+  font-weight:500;
+  font-size:1.2rem;
+}
+.info > p{
+  line-height:40px;
+}
+.info > .price{
+  padding-top: 20px;
+  font-weight: bold;
+  font-size: 18px;
+  color:#f00;
+  display:inline-block;
+}
+.info > p:last-of-type{
+  padding:20px 0px 0px 0px;
+}
+
+/* 펫스토리 서식 */
+.story{
+  clear: both;
+  background: #f0f0f0;
+  height:720px;
+}
+.story > h2{
+  display:none;
+}
+
+.story > article{
+  padding: 50px 0px;
+  text-align: center;
+}
+
+.story > article > h2{
+  font-size: 36px;
+  color:#333;
+  font-weight:200;
+  padding-top:30px;
+  padding-bottom:60px;
+}
+.story_left{
+  text-align: center;
+}
+.story_left > h2{
+  font-size: 36px;
+  color:#333;
+  font-weight: 200;
+  padding-top:60px;
+  padding-bottom: 30px;
+}
+.story_left p{
+  font-size:18px;
+  line-height:30px;
+  padding-bottom:40px;
+}
+.story_left > h2 img{
+width:40px;
+}
+.s_img{
+  width:320px;
+  padding-top: 50px;
+}
+
+/* 인스타그램 서식 */
+.instar{
+  padding:50px 0px;
+}
+.instar > h2{
+  text-align: center;
+  font-size: 1.85rem;
+  color:#333;
+  font-weight: 300;
+  padding-top:60px;
+  padding-bottom:40px;
+  text-transform: uppercase;
+}
+.id_name{
+  display:block;
+  text-transform: lowercase;
+  font-size: 1rem;
+  padding:10px 0px;
+}
+h2 img{width:40px;
+  transform:translateY(10px);
+}
+.gallery{
+  width:100%;
+  padding:10px;
+  grid-gap:10px;
+  display:grid;
+  grid-template-columns: repeat(2,auto);
+  grid-template-rows: repeat(3,160px);
+}
+.gallery li{overflow:hidden;}
+.gallery img{
+  width:100%;
+  object-fit:cover;
+}
+/* li 7~12번 안보이게 */
+.gallery li:nth-child(6)~li{display: none;}
+}
+
