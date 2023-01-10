@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+  *{padding: 0;margin: 0;}
+  a{color: #333; text-decoration: none;}
+  li,ol,ul{list-style: none;}
+article{
+  position: relative;
+}
+article>img{position: absolute;}
+article>img:first-of-type{
+  z-index: 1;
+  transform: translate(150px,50px);
+}
+article img:first-of-type img{z-index: 1;}
+article img:nth-of-type(1) img{z-index: 2;}
+article img:nth-of-type(2) img{z-index: 3;}
+article img:nth-of-type(3) img{z-index: 4;}
+article img:nth-of-type(4) img{z-index: 5;}
+article img:nth-of-type(5) img{z-index: 6;}
+article img:nth-of-type(6) img{z-index: 7;}
+article img:nth-of-type(7) img{z-index: 8;}
+article img:last-of-type img{z-index: 9;}
+
+.img01 {
+  right: 570px;
+  top: 40px;
+}
+.img02{
+  right: 740px;
+  top: 40px;
+}
+.img03 {
+  right: 600px;
+  top: 200px;
+}
+.img04{
+  left: 870px;
+  top:200px;
+}
+.img05{
+  right: 360px;
+  top:240px;
+}
+.img06{
+  right: 430px;
+  top:160px;
+}
+article input[type=button]{
+  position: absolute;
+  z-index: 1;
+  background: none;
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 5px 20px;
+  transform: translate(238px, 300px);
+}
+article>.img01, .img02,.img03,.img04,.img05,.img06{
+  display: none;
+}
+</style>
+</head>
+<body>
+<article>
+  <img src="./exec02/images/m_18_emblem.png" alt="">
+  <input type="button" value="자세히 보기">
+  <img src="./exec02/images/badge_main_autumn2.png" alt="">
+
+  <img src="./exec02/images/bev_bg.jpg" alt="">
+
+    <img src="./exec02/images/bev1_cup.png" alt="" class="img01">
+    <img src="./exec02/images/bev1_txt.png" alt="" class="img02">
+
+    <img src="./exec02/images/bev2_cup.png" alt="" class="img03">
+    <img src="./exec02/images/bev2_txt.png" alt="" class="img04">
+
+    <img src="./exec02/images/bev3_cup.png" alt="" class="img05">
+    <img src="./exec02/images/bev3_txt.png" alt="" class="img06">
+
+
+  <!--제이쿼리라이브러리-->
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script>
+  $(function(){
+    $('.img01').delay(1000).fadeIn();
+    $('.img02').delay(1000).fadeIn();
+    $('.img03').delay(1400).fadeIn();
+    $('.img04').delay(1400).fadeIn();
+    $('.img05').delay(1800).fadeIn();
+    $('.img06').delay(1800).fadeIn();
+  });
+</script>
+</article>
+</body>
+</html>
