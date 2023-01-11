@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>01_제이쿼리_animate메서드</title>
+  <style>
+    ul,li{
+      list-style: none;
+    }
+    .circle{
+      width: 100px; height: 100px;
+      background-color: lavender;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 100px;
+      position: relative;
+    }
+    .cs{
+      position: relative;
+    }
+    .box{
+      background: skyblue;
+      width: 60px;height: 60px;
+      margin-bottom: 10px;
+      position: relative;
+    }
+    .bar01, .bar02, .bar03{
+      background: pink;
+      width: 20px;height: 30px;
+      position: relative;
+      left: 0px;
+      margin-bottom: 10px;
+    }
+    .bar04, .bar05, .bar06, .bar07{
+      background: rgb(172, 158, 255);
+      width: 20px;height: 30px;
+      position: relative;
+      left: 0px;
+      margin-bottom: 10px;
+    }
+    #a_con{
+      border:solid 2px rgb(96, 74, 124);
+      border-radius: 15px;
+      width: 1000px;
+      padding: 30px;
+      box-shadow: 0px 3px 3px #efefef;
+    }
+    #a_con>h2{
+      border: solid 2px rgb(96, 74, 124);
+      display: inline-block;
+      border-radius: 15px;
+      padding: 10px 15px 10px 15px;
+      transform: translate(100px, -80px);
+      background: #fff;
+      box-shadow: 0px 3px 3px #efefef;
+    }
+    #a_box{
+      padding: 0;
+      transform: translateY(-50px);
+    }
+    #a_box>li{
+      display: flex;
+    }
+    .skill{
+      width: 130px;
+      text-align: right;
+      padding-right: 10px;
+    }
+    .pct{
+      padding-left: 10px;
+    }
+  </style>
+  <!--제이쿼리라이브러리-->
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+  <!--easing-->
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <script>
+    $(function(){
+      $('#btn01').click(function(){//play버튼 클릭시 애니메이션 동작
+      $('.circle').animate({'left':'800px'},500).animate({'left':'0px'},1500);
+    });
+    $('#btn02').click(function(){//stop버튼 클릭시 애니메이션 중지
+      $('.circle').stop();
+    });
+    $('#btn03').click(function(){//원위치로 버튼 클릭시 처음 위치로 이동
+      $('.circle').css({'left':'0px'});
+    });
+    //버튼 클릭시 캐릭터 사진 이동하기
+    let n = 50;//이동할 초기값
+    $('#l_btn').click(function(){
+      $('.cs').animate({'left':'-='+n},500);
+    });
+    $('#r_btn').click(function(){
+      $('.cs').animate({'left':'+='+n},500);
+    });
+    $('#u_btn').click(function(){
+      $('.cs').animate({'top':'-='+n},500);
+    });
+    $('#d_btn').click(function(){
+      $('.cs').animate({'top':'+='+n},500);
+    });
+    //box에 마우스 오버시 움직이게 하기
+    $('.box').mouseenter(function(){
+      $(this).animate({'left':'800px'},600);
+    });
+    $('.box').mouseleave(function(){
+      $(this).animate({'left':'0px'},1200);
+    });
+    //easing값 사용하기
+    $('#btn04').click(function(){
+      $('.bar01').animate({'width':'500px'},500,'easeOutQuint');
+    });
+    $('#btn05').click(function(){
+      $('.bar02').animate({'width':'500px'},500,'easeOutElastic');
+    });
+    $('#btn06').click(function(){
+      $('.bar03').animate({'width':'500px'},500,'easeInBounce');
+    });
+      $('.bar04').animate({'width':'800px'},500,'easeOutQuint');
+      $('.bar05').animate({'width':'600px'},500,'easeOutQuint');
+      $('.bar06').animate({'width':'500px'},500,'easeOutQuint');
+      $('.bar07').animate({'width':'700px'},500,'easeOutQuint');
+    });
+
+  </script>
+</head>
+<body>
+  <h2>animate메서드</h2>
+<p>제이쿼리에서는 효과와 애니메이트 메소드를 사용하여 사용자가 선택한 요소를 다양하게 움직이게 만들 수 있다.</p>
+<h3>1. animate 메소드 작성법</h3>
+<p>$('대상').animate({'속성':'값'},시간,가속도,콜백함수);</p>
+<p>{'속성':'값'} - css속성과 값을 말하며 '값'에는 자바스크립트 변수나 연산자를 사용할 수 있다.</p>
+<p>시간 - 애니메이션이 동작하는 시간을 말하며 1/1000초 = 1초를 나타냄</p>
+<p>가속도 - easing 값을 말함(이미지 참조)</p>
+<p>콜백함수 - callback function으로서 애니메이션 동작이 끝나면 다음 동작을 이어서 실행하고자 할 때 사용.</p>
+
+<h3>2. animate메소드 사용하여 '원'움직이게 하기</h3>
+  <div class="circle">원</div>
+  <input type="button" value="play" id="btn01">
+  <input type="button" value="stop" id="btn02">
+  <input type="button" value="원위치로" id="btn03">
+
+<h3>3. 자바스크립트 절대값을 활용하여 캐릭터 위치 조정하기</h3>
+  <img src="./images/cs.jpg" alt="춘식" class="cs">
+  <input type="button" value="&#x2190;" id="l_btn">
+  <input type="button" value="&#x2192;" id="r_btn">
+  <input type="button" value="&#x2191;" id="u_btn">
+  <input type="button" value="&#x2193;" id="d_btn">
+
+
+<h3>4. box에 마우스 오버시 애니메이션 연속 동작하게 하기</h3>
+  <div class="box">&nbsp;</div>
+  <div class="box">&nbsp;</div>
+  <div class="box">&nbsp;</div>
+  <div class="box">&nbsp;</div>
+  <div class="box">&nbsp;</div>
+
+<h3>5. 제이쿼리 UI라이브러리를 사용하여 속도감(easing) 주기</h3>
+  <p>jquery.com 사이트의 왼쪽 상단의 ui탭을 클릭하고 왼쪽 easing 메뉴에서 jquery.ui 라이브러리를 찾아 연결하여 사용한다.</p>
+  <img src="./images/easing.png" alt="속도감주기">
+
+  <div class="bar01"></div>
+  <input type="button" value="easeOutQuint" id="btn04">
+  <div class="bar02"></div>
+  <input type="button" value="easeOutElastic" id="btn05">
+  <div class="bar03"></div>
+  <input type="button" value="easeInBounce" id="btn06">
+
+<h3>6. 실습 - 자신의 능력치 표현하기(html, css, javascript/jquery, UI/UX design)</h3>
+<div id="a_con">
+  <h2>MY SKILL</h2>
+  <ul id="a_box">
+    <li><span class="skill">html</span><div class="bar04"></div><span class="pct">80%</span></li>
+    <li><span class="skill">css</span><div class="bar05"></div><span class="pct">60%</span></li>
+    <li><span class="skill">javascript/jquery</span><div class="bar06"></div><span class="pct">50%</span></li>
+    <li><span class="skill">UI/UX design</span><div class="bar07"></div><span class="pct">70%</span></li>
+  </ul>
+</div>
+</body>
+</html>

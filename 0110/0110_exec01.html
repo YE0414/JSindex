@@ -51,6 +51,11 @@ article img:last-of-type img{z-index: 9;}
   right: 430px;
   top:160px;
 }
+.img07{
+  z-index: 99;
+  right: 270px;
+  top:10px;
+}
 article input[type=button]{
   position: absolute;
   z-index: 1;
@@ -69,7 +74,7 @@ article>.img01, .img02,.img03,.img04,.img05,.img06{
 <article>
   <img src="./exec02/images/m_18_emblem.png" alt="">
   <input type="button" value="자세히 보기">
-  <img src="./exec02/images/badge_main_autumn2.png" alt="">
+  <img src="./exec02/images/badge_main_autumn2.png" alt="" class="img07">
 
   <img src="./exec02/images/bev_bg.jpg" alt="">
 
@@ -87,12 +92,9 @@ article>.img01, .img02,.img03,.img04,.img05,.img06{
 <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
 <script>
   $(function(){
-    $('.img01').delay(1000).fadeIn();
-    $('.img02').delay(1000).fadeIn();
-    $('.img03').delay(1400).fadeIn();
-    $('.img04').delay(1400).fadeIn();
-    $('.img05').delay(1800).fadeIn();
-    $('.img06').delay(1800).fadeIn();
+    $('.img01,.img02').delay(1000).fadeIn();
+    $('.img03,.img04').delay(1400).fadeIn();
+    $('.img05,.img06').delay(1800).fadeIn();
   });
 </script>
 </article>

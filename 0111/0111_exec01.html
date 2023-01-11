@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>0111_exec01</title>
+  <style>
+    div{
+      overflow: hidden;
+      border: 3px solid #333;
+      width: 470px;height: 300px;
+      position: relative;
+    }
+    img{
+      vertical-align: top;
+    }
+    #txt{
+      position: absolute;
+      top:90px; left: -200px;
+    }
+    #pic{
+      position: absolute;
+      bottom: -500px;right: 0px;
+    }
+  </style>
+    <!--제이쿼리라이브러리-->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <!--easing-->
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script>
+      $(function(){
+        $('#txt').delay(500).animate({'left':'10px'},200);
+        $('#pic').delay(520).animate({'bottom':'0px'},300);
+      });
+    </script>
+</head>
+<body>
+  <div>
+    <img src="./images/jobs_text.gif" alt="text" id="txt">
+    <img src="./images/jobs.png" alt="pic" id="pic">
+  </div>
+</body>
+</html>
