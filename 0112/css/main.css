@@ -92,7 +92,7 @@ nav a{
 .sub>li:hover a{color: #ff7c98;}
 
 /*메인서식*/
-main{}
+main{padding-top:40px;}
 .slide{
   width: 1600px;
   height: 697px;

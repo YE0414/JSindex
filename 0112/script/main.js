@@ -51,6 +51,6 @@ $(function(){
   $('.slide i.fas').hover(function(){
     clearInterval(Timer);
   },function(){//다시 마우스 빼면 시간을 넣어서 움직이게 한다.
-    setInterval(moveLeft,3000);
+    Timer = setInterval(moveLeft,3000);
   });
 });
