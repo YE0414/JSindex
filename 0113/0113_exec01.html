@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>0113_exec01</title>
+    <!--폰트어썸-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+  <style>
+    *{margin: 0px;padding:0px;}
+    ul, li, ol{
+      list-style: none;
+    }
+    .b_wrap{
+      border: 2px solid #333;
+      width: 340px;height: 378px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+    .banner{
+      position: relative;
+      display: flex;
+    }
+    .c_btn{
+      display: flex;
+    justify-content: center;}
+    .c_btn>li{
+      background: #fff;
+      margin: 0px 3px;
+      width: 10px;height: 10px;
+      border-radius: 50%;
+      transform: translateY(-30px);
+      transition: 0.3s;
+    }
+    .on{
+      background: rgb(184, 122, 71) !important;
+      width: 40px !important;
+      border-radius: 10px !important;
+    }
+    i.fa-solid{
+      color: #fff;
+      font-size: 20px;
+      transform: translate(295px, -45px);
+    }
+  </style>
+
+      <!--제이쿼리라이브러리-->
+      <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+      <!--easing-->
+      <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+
+      <script>
+        $(function(){
+        let n = $('.c_btn li').index();
+        
+        let img_w = $('.banner img').width();
+        
+        $('.c_btn li').click(function(){
+          n = $(this).index();
+          console.log(n);
+          console.log(img_w*n);
+          $('.banner').animate({'left':-img_w*n},500);
+          $('.c_btn li').removeClass('on');
+          $(this).addClass('on');
+        });
+
+        function moveSlide(n){
+          n= -(n*$('.banner img').width());
+          $('.banner').stop().animate({'left':n},500);
+        }
+
+        let Timer = setInterval(function(){
+          if(n==2){
+            n=0;
+            $('.c_btn li').removeClass('on');
+            $('.c_btn li').eq(n).addClass('on');
+          }else{
+            n++;
+            $('.c_btn li').removeClass('on');
+            $('.c_btn li').eq(n).addClass('on');
+          }
+          moveSlide(n);
+        },1000);
+
+        $('.fa-stop').click(function(){
+        clearInterval(Timer);
+      });
+      $('.fa-play').off('click').on('click',function(){
+        Timer = setInterval(function(){
+        if(n==2){
+          n=0;
+          $('.c_btn li').removeClass('on'); 
+          $('.c_btn li').eq(n).addClass('on')
+        }else{
+          n++;
+          $('.c_btn li').removeClass('on'); 
+          $('.c_btn li').eq(n).addClass('on')
+        }
+        moveSlide(n);
+      }, 1000);
+      });
+    });
+      </script>
+</head>
+<body>
+  <article class="b_wrap">
+    <ul class="banner">
+      <li><a href="#;"><img src="./images/01-1.jpg" alt=""></a></li>
+      <li><a href="#;"><img src="./images/02-1.jpg" alt=""></a></li>
+      <li><a href="#;"><img src="./images/03-1.jpg" alt=""></a></li>
+    </ul>
+    <ul class="c_btn">
+      <li class="on">&nbsp;</li>
+      <li>&nbsp;</li>
+      <li>&nbsp;</li>
+    </ul>
+    <div class="play_stop_btn">
+    <i class="fa-solid fa-play"></i>
+    <i class="fa-solid fa-stop"></i>
+  </div>
+  </article>
+</body>
+</html>
