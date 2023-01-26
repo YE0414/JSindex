@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>제이쿼리 돔 이미지 슬라이드</title>
+  <style>
+    *{
+      margin: 0px;padding: 0px;
+    }
+    li,ol,ul{
+      list-style: none;
+    }
+    a{color: #333; text-decoration: none;}
+    h2, p{padding: 10px;}
+    .banner{
+      width: 1200px;height: 122px;
+      margin: 0 auto;
+      border: 3px solid #f00;
+    }
+    .banner>ul{display: flex; margin-left: -355px;}
+    .banner>img{
+      vertical-align: top;
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+  <script>
+    $(function(){
+      let mleft = -355;
+
+      function moveLeft(){
+
+        $('.banner ul').css('margin-left',mleft);/*왼쪽으로 -355만큼 이동*/
+        mleft -=2; //-355, -760 ...
+        console.log(mleft);
+
+        //ul태그의 위치가 770일때 왼쪽 첫번째 li태그를 오른쪽 끝으로 자리를 바꾼다.
+        if(mleft==-357){
+          $('.banner ul> li:first-child').insertAfter('.banner ul> li:last-child');
+        }else if(mleft==-711){
+          mleft=-355;
+        }
+      };
+
+      let Timer = setInterval(moveLeft,20);
+      //ul태그에 마우스 오버시 시간을 제거하여 멈추게하고 다시 마우스 아웃시 시간을 생성하여 움직이게 한다.
+      $('.banner ul').hover(function(){
+        clearInterval(Timer);
+      },function(){
+        clearInterval(Timer);
+        Timer = setInterval(moveLeft,20);
+      });
+    });
+  </script>
+</head>
+<body>
+  <h2>제이쿼리 돔 이미지 슬라이드</h2>
+  <p>7장의 이미지를 사용하여 왼쪽으로 슬라이드되는 애니메이션 구현하기</p>
+  <article class="banner">
+    <ul>
+      <li><img src="./images02/seoul1.jpg" alt=""></li>
+      <li><img src="./images02/seoul2.jpg" alt=""></li>
+      <li><img src="./images02/seoul3.jpg" alt=""></li>
+      <li><img src="./images02/seoul4.jpg" alt=""></li>
+      <li><img src="./images02/seoul5.jpg" alt=""></li>
+      <li><img src="./images02/seoul6.jpg" alt=""></li>
+      <li><img src="./images02/seoul7.jpg" alt=""></li>
+    </ul>
+  </article>
+</body>
+</html>

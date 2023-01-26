@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>0124_exec_coupang</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+  <style>
+    *{
+      margin: 0;padding:0px;
+    }
+    img{
+      vertical-align: top;
+    }
+    li, ol, ul{
+      list-style: none;
+    }
+    a{
+      text-decoration: none;
+      color: #333;
+    }
+
+    .banner{
+      position: relative;
+    }
+    .banner>div{
+      position: absolute;
+    }
+    .banner>nav{
+      box-shadow: 4px 4px 5px rgb(113, 113, 113);
+      position: absolute;
+      right: 450px;top:45px
+    }
+    .banner>nav li:hover{
+      outline: 2px solid rgb(69, 69, 255);
+      box-sizing: border-box;
+    }
+  </style>
+    <!--제이쿼리라이브러리-->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <script>
+      $(function(){
+        let n = 1;
+          function nextimg(){
+        if(n==6){
+          n=1;
+        }else{
+          n++;//1씩 증가
+        }
+        console.log(n);
+        document.querySelector('.banner div img').src='./image/banner0'+n+'.jpg';}
+        
+        let Timer = setInterval(nextimg, 2000);
+
+        $('.banner nav ul a').mouseenter(function(){
+          let url = $(this).attr('href');
+
+          $('.banner div img').attr('src', url);//이미지 src 속성에 대입한다.
+          });
+          $('.banner nav ul').mouseenter(function(){
+          clearInterval(Timer);
+        });
+        $('.banner nav ul').mouseleave(function(){
+          let Timer = setInterval(nextimg, 2000);
+        });
+          });
+
+    </script>
+</head>
+<body>
+  <article class="banner">
+    <div>
+      <img src="./image/banner01.jpg" alt="배너1">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="./image/banner01.jpg"><img src="./image/item01.jpg" alt=""></a></li>
+        <li><a href="./image/banner02.jpg"><img src="./image/item02.jpg" alt=""></a></li>
+        <li><a href="./image/banner03.jpg"><img src="./image/item03.jpg" alt=""></a></li>
+        <li><a href="./image/banner04.jpg"><img src="./image/item04.jpg" alt=""></a></li>
+        <li><a href="./image/banner05.jpg"><img src="./image/item05.jpg" alt=""></a></li>
+        <li><a href="./image/banner06.jpg"><img src="./image/item06.jpg" alt=""></a></li>
+      </ul>
+  </nav>
+  </article>
+</body>
+</html>
