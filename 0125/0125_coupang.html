@@ -50,22 +50,19 @@
         }
         console.log(n);
         document.querySelector('.banner div img').src='./image/banner0'+n+'.jpg';}
-        
-        let Timer = setInterval(nextimg, 2000);
 
         $('.banner nav ul a').mouseenter(function(){
           let url = $(this).attr('href');
 
           $('.banner div img').attr('src', url);//이미지 src 속성에 대입한다.
           });
-          $('.banner nav ul').mouseenter(function(){
+          $('.banner nav ul').hover(function(){
           clearInterval(Timer);
+        },function(){
+          clearInterval(Timer);
+          Timer = setInterval(nextimg, 2000);
         });
-        $('.banner nav ul').mouseleave(function(){
-          let Timer = setInterval(nextimg, 2000);
-        });
-          });
-
+      });
     </script>
 </head>
 <body>
