@@ -109,17 +109,16 @@
           let Timer = setInterval(moveLeft, 3000);
         });
         //8. 좌, 우버튼을 클릭시 각각 해당하는 방향으로 움직이게 한다.
-        l_btn.click(function(){
+        r_btn.click(function(){
           clearInterval(Timer);
           moveLeft();
         });
-        r_btn.click(function(){
+        l_btn.click(function(){
           clearInterval(Timer);
           moveRight();
         });
         //9. 좌, 우 버튼에 마우스를 아웃하면 다시 시간을 넣어서 자동으로 움직이게 한다.
         $('i.fa-angle-top','i.fas fa-angle-right').mouseleave(function(){
-          clearInterval(Timer);
         Timer = setInterval(moveLeft, 3000);
         });
         //10.페이지 번호

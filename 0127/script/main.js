@@ -18,11 +18,11 @@ $(function(){
 //3. 이미지 목록에 마우스 오버시 캡션나오게
   g_list.hover(function(){
     $(this).find('span').stop().animate({'bottom':'0px'},300);
-    $(this).find('img').stop().animate({'border-radius':'40px'},200);
+    $(this).parent().stop().animate({'border-radius':'40px'},200);
   },
   function(){
     $('.g_list span').stop().animate({'bottom':'-40px'},300);
-    $(this).find('img').stop().animate({'border-radius':'0px'},200);
+    $(this).parent().stop().animate({'border-radius':'0px'},200);
   });
     
 //4. 이미지 클릭시 해당 href값을 가져와서 모달윈도 띄우기
