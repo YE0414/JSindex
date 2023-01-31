@@ -1,0 +1,118 @@
+@charset "utf-8";
+*{
+  margin: 0;padding: 0;
+}
+body{
+  color: #333;
+  font-family: "맑은 고딕",Arial, Helvetica, sans-serif;
+  font-size: 12px;
+}
+.t_color01{
+  color: #006633;
+}
+span{
+  font-size: 16px;
+}
+li, ol, ul{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+  color: #333;
+}
+section{
+  position: relative;
+  width: 1100px;
+  margin: 0 auto;
+  font-size: 14px;
+}
+section>h2{
+  font-size: 28px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  line-height: 40px;
+}
+fieldset{
+  background: #f4f4f2;
+  border: none;
+  border-radius: 3px;
+  text-align: right;
+  line-height: 60px;
+  margin: 20px 0px;
+}
+fieldset>legend{display: none;}
+fieldset #search{
+  border: 1px solid #ccc;
+  height: 30px;
+  width: 300px;
+}
+fieldset input[type=submit]{
+  background: #777777;
+  border: 1px solid #ccc;
+  color: #fff;
+  padding: 6px 8px;
+  border-radius: 3px;
+  font-size: 12px;
+  font-weight: bold;
+}
+/*질문 답변 서식*/
+.faq{
+  margin-top: 30px;
+  margin-bottom: 40px;
+  border-top: 1px solid #333;
+  border-bottom: 1px solid #333;
+}
+.faq > dt::before{
+  content: 'Q ';
+  color: #006633;
+}
+.faq > dd::before{
+  content: 'A ';
+  font-weight: bold;
+}
+.faq > dt{
+  position: relative;
+  cursor: pointer;
+  line-height: 60px;
+  border-bottom: 1px solid #ccc;
+}
+.faq > dt > i{
+  position: absolute;
+  line-height: 60px;
+  font-size: 26px;
+  color: #777777;
+  right: 0px;
+}
+.faq > dd{
+  background: #f4f4f2;
+  padding: 29px 20px;
+  text-indent: -20px;
+  display: none;
+}
+/* 제목에 적용되는 컬러 */
+.act01{
+  color: #006633;
+}
+/* 화살표 방향 */
+.act02{
+  transform: rotate(180deg);
+}
+/* 아래버튼 */
+.page{
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+.page>li{
+  font-size: 12px;
+  padding: 10px;
+}
+.page>li:hover{
+  text-decoration: underline;
+}
+/* 페이지버튼 서식 */
+.on01{
+  color: #006633 !important;
+  text-decoration: underline;
+}
