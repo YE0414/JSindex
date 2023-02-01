@@ -12,7 +12,7 @@
       $(function(){
         //1. 내비게이션 메뉴 클릭시 해당하는 인덱스 값 구하기
         let mnu = $('header .gnb li');
-
+        
         mnu.click(function(){
           let n = $(this).index();
           let sPos = $('section').eq(n).offset().top
@@ -20,7 +20,40 @@
           console.log(sPos);
           $('html, body').animate({scrollTop:sPos - 60},500);
           return false;
-        })
+        });
+        //화면 스크롤값 출력해보기
+        $(window).scroll(function(){
+          let spos = $(this).scrollTop()
+          console.log($(this).scrollTop());
+        
+          //offset메서드로 각각 해당하는 박스의 위치값에 따른 서식 적용하기
+          $('main section').each(function(i){
+            let top = $(this).offset().top;
+            if(spos >= top - 600){
+              $('.gnb li a').removeClass('t_act');
+              $('.gnb li').eq(i).find('a').addClass('t_act');
+            }
+          });
+
+        // if(spos<=715){
+        //   $('.gnb ul li:first-child a').addClass('t_act');
+        // }else if(spos>=816&&spos<=1500){
+        //   $('.gnb ul li:nth-child(2) a').addClass('t_act');
+        // }else if(spos>=1600&&spos<=2350){
+        //   $('.gnb ul li:nth-child(3) a').addClass('t_act');
+        // }else if(spos>=2451&&spos<=3250){
+        //   $('.gnb ul li:nth-child(4) a').addClass('t_act');
+        // }else if(spos>=3351&&spos<=4000){
+        //   $('.gnb ul li:nth-child(5) a').addClass('t_act');
+        // }else if(spos>=4101&&spos<=4700){
+        //   $('.gnb ul li:nth-child(6) a').addClass('t_act');
+        // }else if(spos>=4851&&spos<=5200){
+        //   $('.gnb ul li:last-child a').addClass('t_act');
+        // }else{
+        //   //조건에 해당하지 않으면 서식 제거
+        //   $('.gnb ul li a').removeClass('t_act');
+        // }
+      });
       });
     </script>
 </head>

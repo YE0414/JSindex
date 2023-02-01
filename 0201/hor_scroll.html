@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>원페이지 - 가로스크롤 레이아웃</title>
+  <link rel="stylesheet" href="./css/main.css" type="text/css">
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <!--easing-->
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script>
+      $(function(){
+        $(window).scroll(function(){
+          let spos = $(this).scrollLeft();
+          $('.status').html(spos);
+        });
+        let mnu = $('.gnb ul li a');
+        mnu.click(function(){
+          $('.gnb ul li a').removeClass('on');
+          $(this).addClass('on');
+
+          //선택한 a요소의 href 속성값을 출력해본다.
+          let id_name = $(this).attr('href');
+          console.log(id_name);//car01, car02, car03, car04
+
+          //car01, car02, car03, car04의 왼쪽에서 떨어진 값을 출력
+          let secOffset = $(id_name).offset().left;
+          console.log(secOffset);
+          //해당하는 콘텐츠 위치가 왼쪽 0이 되도록 한다.
+          $('html, body').animate({scrollLeft:secOffset},700,'easeOutQuint');
+
+          return false;
+        });
+        $('main section').each(function(){
+         // 개별적으로 Wheel 이벤트 적용
+        $(this).on('mousewheel',function(e){
+          
+          let delta = 0;//휠값
+          let moveTop = null;
+          let boxMax = $("main section").length - 1;
+          let winEvent = "";
+          console.log(boxMax);
+          
+          if(!winEvent) { //만약에 이벤트가 발생하지 않는다면
+            winEvent = window.event; //이벤트는 없다
+          }
+          if(winEvent.wheelDelta) { //만약에 이벤트에서 휠데이터값이 있다면
+            delta = winEvent.wheelDelta / 120; //데이터값을 저장
+            if(window.opera) {
+                delta = -delta;
+            }
+          }          
+          else if(winEvent.detail) { //그렇지 않으면
+            delta = -winEvent.detail / 3; 
+          }
+                
+          // 마우스휠을 위에서 아래로 이동(처음에서 다음박스로 이동)
+          if(delta < 0) {
+              // 마지막 BOX 보다 순서값이 작은 경우에 실행
+              if($(this).index() < boxMax) {
+                  console.log("▼");
+                  if($(this).next() != undefined) {
+                      moveTop =$(this).next().offset().left;
+                  }
+              }
+              // 마지막 section보다 더 오른쪽으로 이동하려고 하는 경우 알림창 출력
+              else {
+                  alert("마지막 페이지 입니다.");
+                  return false;
+              }
+          }
+          // 마우스휠을 아래에서 위로 이동( 뒤에서 앞으로 이동)
+          else {
+              // 첫번째 section보다 순서값이 큰 경우에 실행
+              if($(this).index() > 0) {
+                  console.log("▲");
+                  if($(this).prev() != undefined) {
+                      moveTop =$(this).prev().offset().left;
+                  }
+              }
+              // 첫번째 section보다 더 위로 이동하려고 하는 경우 알림창 출력
+              else {
+                  alert("첫번째 페이지 입니다.");
+                  return false;
+              }
+          }
+               //화면 이동 0.3초(300)
+              $("html,body").stop().animate({scrollLeft : moveTop + "px"}, 300);
+          });
+        });
+      });
+    </script>
+</head>
+<body>
+  <span class="status">s</span>
+  <!-- 헤더영역 -->
+  <header>
+    <nav class="gnb">
+      <ul>
+        <li><a href="#car01" title="" class="on">미니쿠퍼</a></li>
+        <li><a href="#car02" title="">테슬라</a></li>
+        <li><a href="#car03" title="">람보르</a></li>
+        <li><a href="#car04" title="">포르쉐</a></li>
+      </ul>
+    </nav>
+  </header>
+  <!-- 메인영역 -->
+  <main id="cont">
+    <section id="car01">
+      <h2>미니쿠퍼</h2>
+      <p>MINI의 루프는 드라이버만의 개성을 표현하는 캔버스처럼 쓰이곤 했죠.<br>MINI MULTITONE EDITION은 이런 개성과 다양성을 기념하며 탄생했습니다.<br><br>세이지 그린과 인디안 서머 레드의 다채로운 컬러의 익스테리어, 각도에 따라 다르게 보이는 새로운 멀티톤 색상의 루프, 그리고  차량 곳곳에 담긴 레인보우 패턴의 멀티톤 데칼까지!<br><br>MINI MULTITONE EDITION 과 함께 컬러풀한 인생을 찾아 떠나보세요.</p>
+    </section>
+
+    <section id="car02">
+      <h2>테슬라</h2>
+      <p>안전은 모든 Tesla에서 가장 중요한 부분입니다.<br> Tesla는 차량의 안전성을 최대한 보장할 수 있도록 설계합니다.<br><br>Model Y는 모든 범주 및 하위 범주에서 NHTSA 별 5개 안전 등급을 달성했습니다.</p>
+    </section>
+
+    <section id="car03">
+      <h2>람보르</h2>
+      <p>람보르기니는 폭스바겐 산하 아우디의 자회사로서, 이탈리아 볼로냐를 거점으로 하는 스포츠카 전문 제조업체로, 정식명칭은 Automobili Lamborghini S.p.A.이다. 창립자인 페루치오 람보르기니는 제2차 세계대전 종료 후인 1946년 농업 기계회사를 설립하여 디젤엔진 트랙터를 생산하여 큰 수익을 얻었으며, 이후 가스히터와 에어컨디셔닝 시스템 제작으로 사업을 확장하여 큰 성공을 거두었다.</p>
+    </section>
+
+    <section id="car04">
+      <h2>포르쉐</h2>
+      <p>4인승 스포츠카가 뛰어난 퍼포먼스와 탁월한 편안함, 여기에 포르쉐의 특유의 역동성과 동시에 고효율성을 갖춘다는 것에 대해 많은 사람들은 불가능하다고 입을 모았습니다. 어떤 사람들은 대단한 용기라고 평가하기도 했습니다.</p>
+    </section>
+  </main>
+  <!-- 푸터영역 -->
+  <footer>
+    <address>copy&copy;2023 가로스크롤 레이아웃 allright reserved</address>
+  </footer>
+</body>
+</html>

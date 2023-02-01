@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>원페이지-가로스크롤 레이아웃</title>
+  <link href="./css/layout.css" type="text/css" rel="stylesheet">
+
+  <!-- 제이쿼리 라이브러리 -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+  <!-- 제이쿼리 ui라이브러리 -->
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+
+  <script>
+    $(function(){
+      //가로스크롤값 구하기
+      $(window).scroll(function(){
+        let sPos = $(this).scrollLeft();
+        $('.status').html(sPos); //화면에 출력하기
+      });
+    });
+  </script>
+
+</head>
+<body>
+  <span class="status"></span>
+  <!-- 헤더영역 -->
+  <header>
+    <nav class="gnb">
+      <ul>
+        <li><a href="#car01" title="Mini Cooper">Mini Cooper</a></li>
+        <li><a href="#car02" title="Tesla">Tesla</a></li>
+        <li><a href="#car03" title="Lamborghini">Lamborghini</a></li>
+        <li><a href="#car04" title="Porsche">Porsche</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- 메인영역 -->
+  <main id="cont">
+    <section id="car01">
+      <h2>Mini Cooper</h2>
+      <p>자동차 소개 내용을 검색하여 내용 정리함.</p>
+    </section>
+
+    <section id="car02">
+      <h2>Tesla</h2>
+      <p>자동차 소개 내용을 검색하여 내용 정리함.</p>
+    </section>
+
+    <section id="car03">
+      <h2>Lamborghini</h2>
+      <p>자동차 소개 내용을 검색하여 내용 정리함.</p>
+    </section>
+
+    <section id="car04">
+      <h2>Porsche</h2>
+      <p>자동차 소개 내용을 검색하여 내용 정리함.</p>
+    </section>
+  </main>
+
+  <!-- 푸터영역 -->
+  <footer>
+    <address>
+      copyright&copy;2023 가로스크롤 레이아웃 allright reserved.
+    </address>
+  </footer>
+</body>
+</html>

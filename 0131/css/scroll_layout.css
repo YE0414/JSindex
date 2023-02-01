@@ -3,6 +3,7 @@
   --bc-color01:#e73f77;
   --t-color01:#333;
   --t-color02:#fff;
+  --t-color03:#ff0;
 }
 
 *{
@@ -49,7 +50,17 @@ header>h1>a{
   line-height: 60px;
   font-size: 20px;
   text-transform: capitalize;
+  transition: 0.3s;
 }
+.gnb > ul > li > a:hover{
+  color: var(--t-color03) !important;
+  font-size: 24px !important;
+  font-weight: bold;
+}
+.t_act{
+  color: var(--t-color03) !important;
+  font-size: 24px !important;
+  font-weight: bold;}
 
 /* 콘텐츠 서식 */
 main{
@@ -78,3 +89,4 @@ footer>address{
   color: var(--t-color02);
   font-style: normal;
 }
+
