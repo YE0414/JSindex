@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>0202_exec01</title>
+  <style>
+    *{
+      margin: 0; padding: 0;
+    }
+    img{
+      vertical-align: top;
+    }
+    ul, ol, li{
+      list-style: none;
+    }
+    a{
+      text-decoration: none;
+      color: #333;
+    }
+    article{
+      margin: 0 auto;
+      margin-top: 50px;
+      position: relative;
+      width: 1040px;
+    }
+    article>ul{
+      display: flex;
+      border: 2px solid #333;
+      box-sizing: border-box;
+    }
+    article>ul>li{
+      width: 25%;
+    }
+    .cate{
+      padding-top: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      text-align: center;
+      height: 80px;
+      margin: 0 auto;
+    }
+    .cate>a{
+      display: block;
+      font-weight: bold;
+    }
+    .cate>img{
+      margin: 0 auto;
+      width: 50px;
+      height: 60%;
+    }
+    .con{
+      position: absolute;
+      left: 0;
+    }
+    .con>img{
+      width: 100%;
+      height: fit-content;
+    }
+    .act{
+      background-color: rgb(245, 112, 24);
+      color: #fff;
+    }
+    div.con:not(.co01){
+      display: none;
+    }
+  </style>
+  <!-- 제이쿼리 라이브러리 -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script>
+    $(function(){
+      let t_mnu = $('article>ul>li>.cate')
+
+      $(t_mnu).click(function(){
+        $(this).addClass('act').parent().siblings().find('.cate').removeClass('act');
+        $(this).find('a').addClass('act');
+        $(this).parent().siblings().find('a').removeClass('act');
+        $(this).next().show().parent().siblings().find('.con').hide();
+        
+        let c_img = $(this).find('img').attr('src');
+        c_img = c_img.replace('off','on');
+        console.log(c_img);
+
+      });
+    });
+  </script>
+</head>
+<body>
+  <article>
+    <h2></h2>
+    <ul>
+      <li>
+        <div class="cate act">
+          <img src="./img/ico_theme_zone_1_on.png" alt="테마여행">
+          <a href="#" title="테마여행" class="act">테마여행</a>
+        </div>
+        <div class="con co01">
+          <img src="./img/01.jpg" alt="테마여행">
+        </div>
+      </li>
+      <li>
+        <div class="cate">
+          <img src="./img/ico_theme_zone_2_off.png" alt="">
+          <a href="#" title="추천일정">추천일정</a>
+        </div>
+        <div class="con co02">
+          <img src="./img/02.jpg" alt="추천일정">
+        </div>
+      </li>
+      <li>
+        <div class="cate">
+          <img src="./img/ico_theme_zone_3_off.png" alt="">
+          <a href="#" title="스크린속 제주">스크린속 제주</a>
+        </div>
+        <div class="con co03">
+          <img src="./img/03.jpg" alt="스크린속">
+        </div>
+      </li>
+      <li>
+        <div class="cate">
+          <img src="./img/ico_theme_zone_4_off.png" alt="">
+          <a href="#" title="교통정보">교통정보</a>
+        </div>
+        <div class="con co04">
+          <img src="./img/04.jpg" alt="교통정보">
+        </div>
+      </li>
+      <li>
+        <div class="cate" href="./img/ico_theme_zone_5_on.png">
+          <img src="./img/ico_theme_zone_5_off.png" alt="">
+          <a href="#" title="안심관광 가이드">안전&#x00B7;안심관광 가이드</a>
+        </div>
+        <div class="con co05">
+          <img src="./img/05.jpg" alt="안심관광">
+        </div>
+      </li>
+    </ul>
+  </article>
+</body>
+</html>
