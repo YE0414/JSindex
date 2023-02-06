@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>현대자동차 캐스퍼 - 스크롤레이아웃</title>
+  <!-- 초기화 -->
+  <link href="./css/reset.css" rel="stylesheet" type="text/css">
+  <!-- 기본서식, 공통서식 -->
+  <link href="./css/base.css" rel="stylesheet" type="text/css">
+  <!-- 레이아웃서식 -->
+  <link href="./css/layout.css" rel="stylesheet" type="text/css">
+  <!-- 콘텐츠 영역서식 -->
+  <link href="./css/main.css" rel="stylesheet" type="text/css">
+  <!-- 아이콘폰트 주소 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <!-- css3추가속성시 접두사 자동으로 붙여주는 스크립트 -->
+  <script src="./script/prefixfree.min.js"></script>
+  <!-- 제이쿼리 라이브러리 -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <!-- 제이쿼리 ui라이브러리 -->
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <!-- 제이쿼리 쿠키파일 -->
+  <script src="./script/jquery.cookie.js"></script>
+  <!-- 공통스크립트 -->
+  <script src="./script/layout.js"></script>
+  <!-- 콘텐츠 스크립트 -->
+  <script src="./script/main.js"></script>
+  <!-- 스와이퍼 -->
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+/>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+</head>
+<body>
+  <!-- 헤더 -->
+  <header>
+    <h1>
+      <a href="index.html" title="메인페이지로 바로가기">
+        <img src="./images/logo-casper-white.028f418.png" alt="상단 로고">
+      </a>
+    </h1>
+    <nav>
+      <ul id="gnb">
+        <li><a href="#" title="소개">소개</a></li>
+        <li><a href="#" title="체험">체험</a></li>
+        <li><a href="#" title="구매">구매</a></li>
+        <li><a href="#" title="이벤트">이벤트</a></li>
+        <li><a href="#" title="고객지원">고객지원</a></li>
+      </ul>
+    </nav>
+  <!-- 아이콘 -->
+    <i class="fas fa-user"></i>
+    <i class="fas fa-bell"></i>
+  </header>
+  <!-- 우측 원형 내비 -->
+  <nav id="m_nav">
+    <ul>
+      <li><span>1</span>
+        <a href="#" title="소개">소개</a></li>
+      <li><span>2</span>
+        <a href="#" title="체험">체험</a></li>
+        <li><span>3</span>
+          <a href="#" title="구매">구매</a></li>
+          <li><span>4</span>
+            <a href="#" title="이벤트">이벤트</a></li>
+      <li><span>5</span>
+        <a href="#" title="고객지원">고객지원</a></li>
+    </ul>
+  </nav>
+<!-- 메인 -->
+  <main>
+    <section id="main_intro">
+      <h2>캐스퍼 인트로 영상</h2>
+      <article>
+        <h3>CASPER</h3>
+        <p>
+          오직 캐스퍼 온라인에서만 구매하실 수 있습니다.
+        </p>
+        <a href="http://casper.hyundai.com/vehicles/making/model" title="나만의 캐스퍼 만들기">나만의 캐스퍼 만들기</a>
+        <a href="http://casper.hyundai.com/vehicles/making/benefit" title="구매 혜택보기">구매 혜택보기</a>
+        <a href="http://casper.hyundai.com/vehicles/making/highlight" title="자세히 보기">자세히 보기</a>
+      </article>
+
+      <div class="vdo">
+      <video autoplay muted loop="infinite">
+        <source src="./images/main_KV.webm" type="video/webm">
+      </video>
+      </div>
+
+      <a href="#" title="아래로 이동" id="next_btn">&nbsp;</a>
+
+    </section>
+    <section id="top3">
+      <h2 class="m_title">가장 많이 찾은 캐스퍼 Top3</h2>
+      <p>지금 가장 인기 있는 조합을 확인해보세요.</p>
+      <article class="swiper mySwiper">
+        <ul class="swiper-wrapper">
+          <li class="swiper-slide">
+            <p><span>1위</span><br>
+              가솔린 터보 인스퍼레이션</p>
+            <div>
+              <img src="./images/color_gray.7ad235d.png" alt="">
+            </div>
+            <div>
+                <div>
+                  <img src="./images/colorchip-exterior.png" alt="">
+                  <p>외장색상<br>
+                    톰보이 카키
+                  </p>
+                </div>
+                <div>
+                  <img src="./images/colorchip-interior-mobile_s (1).png" alt="">
+                    <p>내장색상<br>
+                      블랙
+                    </p>
+                  </div>
+                  <div>
+                    <p>선택품목<br>
+                    캐스퍼 액티브 II</p>
+                  </div>
+                  <div>
+                    <p>19,600,000 <span>원</span></p>
+                  </div>
+              </div>
+          </li>
+          <li class="swiper-slide">
+            <p><span>2위</span><br>
+              가솔린 터보 인스퍼레이션</p>
+            <div>
+              <img src="./images/color_gray.7ad235d.png" alt="">
+            </div>
+              <div>
+                <div>
+                  <img src="./images/colorchip-exterior.png" alt="">
+                  <p>외장색상<br>
+                    톰보이 카키
+                  </p>
+                </div>
+                <div>
+                  <img src="./images/colorchip-interior-mobile_s (1).png" alt="">
+                    <p>내장색상<br>
+                      블랙
+                    </p>
+                  </div>
+                  <div>
+                    <p>선택품목<br>
+                    캐스퍼 액티브 II</p>
+                  </div>
+                  <div>
+                    <p>19,600,000 <span>원</span></p>
+                  </div>
+              </div>
+          </li>
+          <li class="swiper-slide">
+            <p><span>3위</span><br>
+              가솔린 터보 인스퍼레이션</p>
+            <div>
+              <img src="./images/color_gray.7ad235d.png" alt="">
+            </div>
+              <div>
+                <div>
+                  <img src="./images/colorchip-exterior.png" alt="">
+                  <p>외장색상<br>
+                    톰보이 카키
+                  </p>
+                </div>
+                <div>
+                  <img src="./images/colorchip-interior-mobile_s (1).png" alt="">
+                    <p>내장색상<br>
+                      블랙
+                    </p>
+                  </div>
+                  <div>
+                    <p>선택품목<br>
+                    캐스퍼 액티브 II</p>
+                  </div>
+                  <div>
+                    <p>19,600,000 <span>원</span></p>
+                  </div>
+              </div>
+          </li>
+        </ul>
+      </article>
+      <a href="" class="more_btn">견적내기 ></a>
+      <div class="swiper-pagination"></div>
+      <i class="fa-solid fa-chevron-left"></i>
+      <i class="fa-solid fa-chevron-right"></i>
+    </section>
+    <section id="intro">
+      <h2 class="m_title">소개</h2>
+      <video autoplay muted>
+        <source src="./images/highlight_intro.mp4" type="video/webm">
+      </video>
+      <p class="r_title">강인하고<br>아이코닉한 SUV</p>
+      <p class="l_title">젊고 역동적인<br>감성의<br>SUV디자인</p>
+      <div>
+        <a href="#;" class="more_btn">더보기</a>
+      </div>
+
+    </section>
+    <section id="ride">
+      <h2 class="m_title">시승 신청</h2>
+      <p class="p01">캐스퍼가 제공하는 편리한 시승 서비스를 이용해 보세요.</p>
+      <article class="t_drive_l">
+        <h3>현대자동차 드라이빙 라운지<br>
+        / CASPER STUDIO 시승</h3>
+        <p class="t_d_p1">드라이빙 라운지와 CASPER STUDIO에서<br>
+        캐스퍼를 체험해보세요.</p>
+        <a href="text_drive.html" title="시승신청" class="text_d_btn">시승 신청하기</a>
+        <br>
+        <a href="text_drive.html" title="시승신청" class="text_d_btn01">시승 신청 조회 ></a>
+        <p class="t_d_p2">&middot;시승 신청은 만 21세 이상 운전면허 소지자면 누구나 이용 가능합니다.</p>
+      </article>
+      <article class="t_drive_r">
+        <h3>쏘카<br>카셰어링 시승</h3>
+          <p class="t_d_p1">24시간 언제나 내 근처에서 편리하게<br>
+          캐스퍼를 체험하실 수 있습니다.</p>
+          <a href="text_drive.html" title="시승신청" class="text_d_btn">시승 신청하기</a>
+          <p class="t_d_p2">&middot;쏘카는 만 21세 이상, 운전면허 취득 1년 이상 시 이용할 수 있습니다.</p>
+      </article>
+    </section>
+    <section id="buy">
+      <h2 class="m_title">캐스퍼 구매안내</h2>
+
+    </section>
+    <section id="event">
+      <h2 class="m_title">이벤트 & 프로모션</h2>
+      <p>다양한 이벤트 & 프로모션과 함께 캐스퍼를 만나보세요.</p>
+      <div class="e_banner_wraper">
+        <ul class="e_banner">
+          <li>
+            <a href="">
+              <img src="./images/pc_mainEventBanner.jpg" alt="">
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <img src="./images/PC_main_banner_car_insurance.jpg" alt="">
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <img src="./images/PC_mainevent_nbavver_green.jpg" alt="">
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <img src="./images/01_PC_mainBanner.png" alt="">
+            </a>
+          </li>
+        </ul>
+        <i class="fa-solid fa-angle-left"></i>
+        <i class="fa-solid fa-angle-right"></i>
+      </div>
+    </section>
+    <section id="cs">
+      <h2 class="m_title">고객 지원</h2>
+    </section>
+  </main>
+<!-- 푸터 -->
+  <footer></footer>
+</body>
+</html>

@@ -1,0 +1,334 @@
+@charset "utf-8";
+main{}
+
+main>section{position: relative;}
+#main_intro h2{display: none;}
+#main_intro article{
+  position: absolute;
+  z-index: 2;
+}
+#main_intro article{
+  position: absolute;
+  width: 100%;
+  top:50%;transform: translateY(-50%);
+  text-align: center;
+  color: var(--t-color02);
+}
+#main_intro article>h3{
+  font-size: 60px;
+  font-weight: bold;
+}
+#main_intro article>p{
+  line-height: 80px;
+  font-size: 16px;
+}
+#main_intro article>a{
+  color: var(--t-color02);
+  font-size: 14px;
+  text-decoration: underline;
+  margin: 0 20px;
+  padding: 5px 10px;
+}
+#main_intro .vdo{
+height: 100vh;
+max-width: 1920px;
+width: 100%;
+position: relative;
+overflow: hidden;
+display: flex;
+align-items: flex-end;
+}
+#main_intro .vdo>video{
+  object-fit:scale-down;
+  /* overflow: visible; */
+}
+#main_intro article a:first-of-type{
+  background: var(--bg-color01);
+}
+#main_intro>a{
+  position: absolute;
+  bottom:70px;
+  left: 50%;
+  transform: translateX(-50%);
+  /* text-indent: -9999px; */
+  border-top: 1px solid #fff;
+  border-left: 1px solid #fff;
+  width: 40px;height: 40px;
+  transform: rotate(225deg);
+}
+#top3,#intro,#event,#ride,#buy,#cs{
+  position: relative;
+  margin: 50px 0px 50px 0px;
+}
+/* 버튼 */
+#top3 .more_btn{
+  position: relative;
+  display: inline-block;
+  left: 50%;transform: translateX(-50%);
+  border: 2px solid #333;
+  line-height: 30px;
+  padding: 0px 30px;
+  margin: 30px 0px;
+}
+#intro>div>a{
+  border: 2px solid #333;
+  line-height: 50px;
+  padding: 5px 40px;
+}
+.more_btn:hover{
+  background: var(--t-color01);
+  color: var(--t-color02);
+}
+/* h2 */
+.m_title{
+  padding-top: 60px;
+  text-align: center;
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+/* top3 */
+#top3>article>div:first-of-type{
+  transform: translateY(50px);
+  z-index: 2;
+}
+#top3> p{
+  text-align: center;
+  margin-bottom: 50px;
+}
+#top3>article>ul{
+  position: relative;
+  justify-content: space-around;
+  display: flex;
+  width: 100%;
+}
+#top3>article>ul>li{
+  width: 100% !important;
+  text-align: center;
+}
+#top3>article>ul>li>p{
+
+  text-align: center;
+  color: var(--bg-color02);
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 50px;
+}
+#top3>article>ul>li>p>span{
+  border: 1px solid #066aad;
+  color: var(--t-color03);
+  padding: 3px 18px;
+  border-radius: 25px;
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 50px;
+}
+#top3>article>ul>li>div:first-of-type>img{
+  width: 300px;
+  margin-bottom: 60px;
+}
+#top3>article>ul>li>div:last-of-type{
+  display: flex;
+  justify-content: center;
+  text-align: left;
+}
+#top3>article>ul>li>div:last-of-type>div{
+  display: flex;
+}
+#top3>article>ul>li>div:last-of-type>div>div{
+  display: flex;
+}
+#top3>article>ul>li>div:last-of-type>div>img{
+  width: 40px;
+  height: 30px;
+}
+#top3>article>ul>li>div:last-of-type>div>p{
+  margin: 0px 10px;
+  line-height: 20px;
+}
+#top3>article>ul>li>div:last-of-type>div:last-child>p{
+  color: var(--bg-color02);
+  font-size: 20px;
+}
+#top3>article>ul>li>div:last-of-type>div:last-child>p>span{
+  font-size: 12px;
+}
+#top3>article>div:first-of-type{
+}
+#top3>article>div>ul:last-of-type{}
+#top3>article>div>ul:last-of-type>li{
+  display: inline-block;
+  width: 10px;height: 10px;
+  border-radius: 50%;
+  margin: 3px;
+  background-color: rgb(255, 0, 0);
+}
+#top3>i.fa-solid{
+  font-size: 26px;
+  position: absolute;
+  top: 50%;
+}
+#top3>i.fa-chevron-left{
+  left: 15%;
+}
+#top3>i.fa-chevron-right{
+  right: 15%;
+}
+.swiper-pagination{
+bottom:-15px !important;
+}
+/* intro */
+#intro{
+  height: 830px;
+  overflow: hidden;}
+#intro>div{
+  position: absolute;
+}
+#intro>h2{
+  z-index: 2;
+  width: 100%;
+  position: absolute;
+}
+#intro>.r_title{
+  right: 100px;
+  bottom: 200px;
+  text-align: right;
+}
+#intro>.l_title{
+  left:100px;
+  top:180px;
+  text-align: left;
+}
+#intro>video{
+  transform: translateY(-60px);
+  position: absolute;
+  width: 100%;
+}
+#intro>p{
+  font-size: 26px;
+  line-height: 40px;
+  font-weight: bold;
+  position: absolute;
+  z-index: 2;
+}
+#intro>div{
+left: 50%;transform: translateX(-50%);
+bottom:40px;
+}
+/* 시승신청 */
+#ride{
+  text-align: center;
+}
+#ride>article>h3{
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 30px;
+}
+#ride>.p01{
+  text-align: center;
+  font-size: var(--f-size01);
+  line-height: 40px;
+}
+#ride>article{
+  width: 350px;height: 200px;
+  border:1px solid #ccc;
+  padding: 15px;
+  text-align: center;
+  position: relative;
+  margin-top: 50px;
+  display: inline-block;
+}
+.t_drive_l{
+  margin-right: 30px;
+}
+.t_drive_r{
+  transform: translateY(-11px);
+}
+#ride>article>p{
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  padding: 20px 0px;
+}
+.text_d_btn{
+  background: var(--bg-color02);
+  color:#fff;
+  line-height: 30px;
+  padding: 5px 60px;
+}
+.text_d_btn01{
+  color: var(--bg-color01);
+  position: relative;
+  top:16px;
+}
+.t_d_p2{
+  font-size: 12px !important;
+  transform: translateY(30px);
+}
+.t_drive_r>.t_d_p2{
+  transform: translateY(40px);
+}
+/* 이벤트 */
+#event{}
+#event>p{
+  text-align: center;
+  line-height: 40px;
+}
+#event>.e_banner_wraper{
+  margin: 50px auto 0px auto;
+  width: 1200px;height: 300px;
+  position: relative;
+  overflow: hidden;
+}
+#event>.e_banner_wraper>.e_banner{
+  display: flex;
+  position: relative;
+}
+#event>.e_banner_wraper>.e_banner>li{}
+#event>.e_banner_wraper>i.fa-solid{
+font-size: 20px;
+position: absolute;
+top:50%;transform: translateY(-50%);
+background: rgba(255, 255, 255, .5);
+padding: 10px 15px;
+display: inline-block;
+cursor: pointer;
+}
+#event>.e_banner_wraper>i.fa-angle-left{
+  left: 0;
+}
+#event>.e_banner_wraper>i.fa-angle-right{
+  right: 0;
+}
+/* 모달서식 */
+.modal{
+  width: 100%;height: 100%;
+  position: fixed;
+  left: 0;top:0;
+  background: rgba(0, 0, 0, .6);
+  z-index: 9999;
+}
+.modal>.m_inner{
+  width: 450px;
+  height: 640px;
+  position: absolute;
+  top:50%; left: 50%;
+  transform: translate(-50%, -50%);
+}
+.m_inner>p{
+  line-height: 40px;
+  background: #fff;
+  font-size: var(--f-size);
+  padding: 0px 10px;
+  box-sizing: border-box;
+}
+.m_inner>p a{
+  position: absolute;
+  right: 10px;
+  font-size: var(--f-size);
+  color: var(--t-color01);
+}
+.m_inner label[for=ch]{
+  padding: 5px;
+  color: var(--t-color01);
+}

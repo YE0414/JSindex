@@ -80,12 +80,20 @@
         $(this).parent().siblings().find('a').removeClass('act');
         $(this).next().show().parent().siblings().find('.con').hide();
         
-        let c_img = $(this).find('img').attr('src');
-        c_img = c_img.replace('off','on');
-        console.log(c_img);
+        // let c_img = $(this).find('img').attr('src');
+        // c_img = c_img.replace('off','on');
+        // console.log(c_img);
+        let n = $('article>ul>li').index();
+        $('ul li').each(function(i){//li태그에 각각 기능을 삽입한다.
+          
+          $(this).find('.cate').find('img').attr('src', $(this).find('.cate').find('img').attr('src').replace('_off','_on'));
 
+          if(n!=i){//만약에 선택한 요소의 인덱스 번호가 아니라면 아래 내용을 실행
+            $(this).find('.cate').find('img').attr('src', $(this).find('.cate').find('img').attr('src').replace('_on','_off'));
+          }
       });
     });
+  });
   </script>
 </head>
 <body>
